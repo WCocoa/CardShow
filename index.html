@@ -7,10 +7,12 @@
     <title>CardShow</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300,400,700)' />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/cardshow.css">
     <link rel="stylesheet" href="css/demo.css">
-    <script src="js/modernizr-2.7.1.min.js"></script>
+    <script src="js/vendor/modernizr-custom.js"></script>
 </head>
 
 <body>
@@ -38,9 +40,12 @@
             </nav>
         </div>
     </div>
-	<script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/cardshow.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
+    </script>
+    <script src="js/cardshow.js"></script>
+    <script type="text/javascript">
 
     // 生成模拟数据
     var data = '';
@@ -56,11 +61,11 @@
     var cs = $('.card-container').cardshow({
         src: data,
         autoDrawing: true,
+        backface: true,
+        rows: 1,
         drawingCardsNum: 3,
         drawingRounds: 0,
-        drawingSpeed: 300,
-        rows: 1,
-        backface: true
+        drawingSpeed: 300
     });
     
     </script>
